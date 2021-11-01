@@ -1,4 +1,4 @@
-# tree-xml
+# v-input-trim
 ## 说明
 由于使用v-model.trim去空格会导致输入时无法在内容前后输入空格，无法满足产品要求，因此设计了该v-input-trim指令。
 使用v-input-trim指令输入框, 失焦后会自动清除输入内容前后的所有空格。
