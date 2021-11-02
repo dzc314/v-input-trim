@@ -27,7 +27,6 @@
     "去空格"
   ],
   "dependencies": {
-    "ant-design-vue": "^1.7.8",
     "core-js": "^3.6.5",
     "element-ui": "^2.15.6",
     "vue": "^2.6.11",

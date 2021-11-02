@@ -13,12 +13,12 @@
       }}
     </h3>
     <h4>
-      <p>原生input输入框</p>
-      <input v-input-trim v-model="value" />
+      <p>原生input输入框使用v-model.trim</p>
+      <input v-model.trim="value" />
     </h4>
     <h4>
-      <p>原生textarea输入框</p>
-      <textarea v-input-trim v-model="value" />
+      <p>原生input输入框使用v-input-trim指令</p>
+      <input v-input-trim v-model="value" />
     </h4>
     <h4>
       <p>Element-ui：el-input组件输入框</p>
@@ -28,19 +28,11 @@
       <p>Element-ui：el-input组件,类型为textarea输入框</p>
       <el-input v-input-trim type="textarea" v-model="value"></el-input>
     </h4>
-    <h4>
-      <p>Ant Design of Vue：a-input输入框</p>
-      <a-input v-input-trim v-model="value"></a-input>
-    </h4>
-    <h4>
-      <p>Ant Design of Vue：a-input, textarea输入框</p>
-      <a-input v-input-trim v-model="value" type="textarea"></a-input>
-    </h4>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
 
 @Component({})
 export default class App extends Vue {
@@ -58,6 +50,10 @@ export default class App extends Vue {
       return matchResult[0].length;
     }
     return 0;
+  }
+  @Watch("value")
+  valueWatcher(value: string): void {
+    console.log(value);
   }
 }
 </script>
